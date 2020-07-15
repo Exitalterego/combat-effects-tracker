@@ -1,0 +1,11 @@
+{
+    "name": "combat-effects-tracker",
+    "title": "Combat Effects Tracker - Temporary Effects made easy",
+    "description": "A simple module that utilizes the temporary combatants functionality to keep track of temporary effects.",
+    "author": "Mikey",
+    "version": "1.0.0",
+    "minimumCoreVersion": "0.6.2",
+    "scripts": [
+        "scripts/effects_tracker.js"
+    ]
+}
