@@ -5,6 +5,7 @@
     "author": "Mikey",
     "version": "1.0.0",
     "minimumCoreVersion": "0.6.2",
+    "download": "https://github.com/MKamysz/combat-effects-tracker/archive/master.zip",
     "scripts": [
         "scripts/effects_tracker.js"
     ]
