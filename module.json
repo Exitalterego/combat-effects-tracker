@@ -1,6 +1,6 @@
 {
     "name": "combat-effects-tracker",
-    "title": "Combat Effects Tracker - Temporary Effects made easy",
+    "title": "Combat Effects Tracker",
     "description": "A simple module that utilizes the temporary combatants functionality of the Combat Utility Belt module to keep track of temporary effects.",
     "author": "Mikey",
     "version": "1.0.0",
