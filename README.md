@@ -14,6 +14,8 @@ Paste the following link in the *Install Module* interface of your Foundry VTT i
 https://raw.githubusercontent.com/MKamysz/combat-effects-tracker/master/module.json
 ```
 
+Or - even simpler - search for Combat Effects Tracker in the Add-On Modules dialogue of your Foundry VTT instance.
+
 ## How it works
 
 1. Set the module settings to the correct resource that you use in your Combat Tracker
