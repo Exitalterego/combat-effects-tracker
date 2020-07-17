@@ -6,7 +6,7 @@ Hooks.on("updateCombat", function() {
 
     if (c.name.toLowerCase().includes("[effect]")) {
         console.log(resource_setting);
-        
+
         let token = canvas.tokens.ownedTokens.filter(el => el.actor.data._id == c.actor.data._id)[0];
         
         setting_split = resource_setting.split(".");
@@ -19,9 +19,14 @@ Hooks.on("updateCombat", function() {
 
         console.log(temp_arr);
 
-        resource = temp_arr - 1;
+        let resource = temp_arr - 1;
+
+        console.log(resource);
         
-        resoure_string = "actorData.data." + resource_setting;
+        let resource_string = "actorData.data." + resource_setting;
+
+        console.log(resource_string);
+
         token.update({resource_string: resource});
     }
 });
