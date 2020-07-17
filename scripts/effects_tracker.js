@@ -19,14 +19,16 @@ Hooks.on("updateCombat", function() {
 
         console.log(temp_arr);
 
-        let resource = temp_arr - 1;
+        resource = temp_arr - 1;
 
         console.log(resource);
         
-        let resource_string = "actorData.data." + resource_setting;
+        resource_string = "actorData.data." + resource_setting;
 
         console.log(resource_string);
 
-        token.update({resource_string: resource});
+        data = {};
+        data[resource_string] = resource;
+        token.update(data);
     }
 });
