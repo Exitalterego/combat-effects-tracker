@@ -8,6 +8,6 @@
     "download": "https://github.com/MKamysz/combat-effects-tracker/archive/dev.zip",
     "scripts": [
         "scripts/effects_tracker.js",
-        "scripts/form.js"
+        "scripts/settings.js"
     ]
 }
