@@ -1,14 +1,40 @@
-Hooks.on("updateCombat", function() {
-    // Execute function once updateCombat Hook is called (e.g. after progressing to next turn)
-    
-    let c = game.combat.combatant
+import { TemporaryEffectForm } from "./form.js"
 
-    if (c.name.toLowerCase().includes("[effect]")) {
-        let token = canvas.tokens.ownedTokens.filter(el => el.actor.data._id == c.actor.data._id)[0];
+export class TemporaryEffects {
+    /**
+     * Handler for combat tracker render
+     * @param {*} app 
+     * @param {*} html 
+     * @param {*} data 
+     */
 
-        ac = token.actor.data.data.attributes.ac.value;
-        ac = ac - 1;
-        
-        token.update({"actorData.data.attributes.ac.value": ac});
+    static async _onRenderCombatTracker(app, html, data) {
+
+        const combatantList = html.find("#combat-tracker.directory-list");
+        const listItemHtml = `<div class = "flexrow"><a class = "add-temporary-effect"><i class = "fa fa-plus"></i> Add Temporary Effect </a></div>`
+
+        if (!game.combat || !combatantList.length) {
+            return;
+        }
+
+        combatantList.append(listItemHtml);
+
+        const button = combatantList.find(".add-temporary-effect");
+
+        button.on("click", event => {
+            TemporaryEffects._onAddTemporaryEffect(event);
+        });
     }
-});
+
+    /**
+     * Open the Temporary Effect form
+     * @param {*} event 
+     */
+    static _onAddTemporaryEffect(event) {
+        const temporaryEffectForm = new temporaryEffectForm({}).render(true);
+    }
+}
+
+// let ct_settings = new CombatTrackerConfig();
+// let attr_choices = ct_settings.getAttributeChoices();
+
