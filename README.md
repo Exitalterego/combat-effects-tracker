@@ -16,10 +16,10 @@ https://raw.githubusercontent.com/MKamysz/combat-effects-tracker/master/module.j
 
 ## How it works
 
-In the module settings dialogue, choose which resource you track in your combat tracker. The module always uses the tracked resource as the countdown for the duration.
-
-Once the settings are aligned, you can create a new combatant that represents an effect you want to track and edit the name to include **[Effect]** (upper or lowercase doesn't matter here). Now set the tracked resource of the effect combatant to the desired duration in turns.
-
-That's it - each time the combat tracker reaches the effect, it will reduce the tracked resource by one as displayed in the GIF:
+1. Set the module settings to the correct resource that you use in your Combat Tracker
+2. Create a new Combatant for the desired effect and give it the [Effect] prefix, e.g. [Effect] Bardic Inspiration
+3. Give the effect's Combatant an Initiative value that puts it where you want it to be in the Combat Tracker﻿
+4. Set the resource of your effect's Combatant that you track in your Combat Tracker to the desired duration in turns, e.g. Armor Class = 10 for a duration of 1 minute
+5. That's it - each time the Combat Tracker reaches [Effect] Bardic Inspiration, it will reduce its Armor Class by 1, and when it reaches 0 you'll know that the effect is over!
 
 ![Recordit GIF](http://g.recordit.co/IeyCCcFGGt.gif)
