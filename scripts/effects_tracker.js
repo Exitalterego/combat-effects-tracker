@@ -5,6 +5,8 @@ Hooks.on("updateCombat", function() {
     let c = game.combat.combatant;
 
     if (c.name.toLowerCase().includes("[effect]")) {
+        console.log(resource_setting);
+        
         let token = canvas.tokens.ownedTokens.filter(el => el.actor.data._id == c.actor.data._id)[0];
         
         setting_split = resource_setting.split(".");
@@ -14,6 +16,8 @@ Hooks.on("updateCombat", function() {
         setting_split.forEach(function(item, index) {
             temp_arr = temp_arr[item];
         });
+
+        console.log(temp_arr);
 
         resource = temp_arr - 1;
         
