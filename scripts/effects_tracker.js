@@ -1,5 +1,15 @@
 import { TemporaryEffectForm } from "./form.js"
 
+Hooks.once('init', async function() {
+    console.log('Initializing Combat Effects Tracker')
+
+    TemporaryEffects = new TemporaryEffects();
+});
+
+Hooks.on("renderCombatTracker", (app, html, data) => {
+    TemporaryEffects._onRenderCombatTracker(app, html, data);
+});
+
 export class TemporaryEffects {
     /**
      * Handler for combat tracker render
