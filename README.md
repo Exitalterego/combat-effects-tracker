@@ -4,7 +4,7 @@
 
 ## Requirements
 
-There are no other modules required for this to work, but it synergizes well with the *Add Temporary Combatant* functionality of the <a href="https://github.com/death-save/combat-utility-belt">Combat Utility Belt</a> module.
+There are no other modules required for this to work, but it synergizes well with the *Add Temporary Combatant* functionality of the <a href="https://github.com/death-save/combat-utility-belt">Combat Utility Belt</a> module, as it allows you to quickly add temporary effects.
 
 ## Installation
 
@@ -16,16 +16,10 @@ https://raw.githubusercontent.com/MKamysz/combat-effects-tracker/master/module.j
 
 ## How it works
 
-For each temporary effect you want to track, add a combatant to your combat tracker that is named as __[Effect] Desired Name__. The module will check if the name of the currently active combatant contains the __[Effect]__ prefix.
+In the module settings dialogue, choose which resource you track in your combat tracker. The module always uses the tracked resource as the countdown for the duration.
 
-Set the armor class of the temporary effect combatant to the desired duration in turns. A duration of 1 minute would equal an AC of 10.
+Once the settings are aligned, you can create a new combatant that represents an effect you want to track and edit the name to include **[Effect]** (upper or lowercase doesn't matter here). Now set the tracked resource of the effect combatant to the desired duration in turns.
 
-Each time the combat tracker reaches the combatant that represents the temporary effect, it will lower its armor class by one.
+That's it - each time the combat tracker reaches the effect, it will reduce the tracked resource by one as displayed in the GIF:
 
 ![Recordit GIF](http://g.recordit.co/IeyCCcFGGt.gif)
-
-## Notes
-
-Note that the module currently only uses __armor class__ as a tracked resource in the combat tracker.
-
-I might update it to offer more flexibility in the future.
