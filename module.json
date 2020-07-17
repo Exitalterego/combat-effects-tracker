@@ -3,7 +3,7 @@
     "title": "Combat Effects Tracker",
     "description": "A simple module that utilizes the temporary combatants functionality of the Combat Utility Belt module to keep track of temporary effects.",
     "author": "Mike Kamysz",
-    "version": "1.0.0",
+    "version": "0.2",
     "minimumCoreVersion": "0.6.2",
     "download": "https://github.com/MKamysz/combat-effects-tracker/archive/dev.zip",
     "scripts": [
