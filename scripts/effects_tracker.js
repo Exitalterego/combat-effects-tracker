@@ -1,25 +1,43 @@
 Hooks.on("updateCombat", function() {
     // Execute function once updateCombat Hook is called (e.g. after progressing to next turn)
-    let resource_setting = game.settings.get("combat-effects-tracker", "trackedResource");
+    let trackedResource = game.settings.get("combat-effects-tracker", "trackedResource");
     let c = game.combat.combatant;
 
     if (c.name.toLowerCase().includes("[effect]")) {
         let token = canvas.tokens.ownedTokens.filter(el => el.actor.data._id == c.actor.data._id)[0];
-        
-        setting_split = resource_setting.split(".");
+        let actor = token.actor;
+        let node = actor.data.data;
 
-        let temp_arr = token.actor.data.data;
-
+        // Drill down to the tracked resource being used.
+        setting_split = trackedResource.split(".");
         setting_split.forEach(function(item, index) {
-            temp_arr = temp_arr[item];
+            node = node[item];
         });
+        // Decrement the value.
+        let value = node - 1;
 
-        resource = temp_arr - 1;
-
-        resource_string = "actorData.data." + resource_setting;
-
-        data = {};
-        data[resource_string] = resource;
-        token.update(data);
+        if (value > 0) {
+            // The effect still remains.
+            console.log( 'Reducing ' + c.name + ' duration to ' + value );
+            key = "actor.data.data." + trackedResource;
+            key = "data." + trackedResource;
+            data = {};
+            data[key] = value;
+            // Update the new value.
+            actor.data.document.update(data);
+        } else {
+            // The effect has expired.
+            console.log( c.name + ' has expired, removing combatant' );
+            // Send a chat message.
+            let message = c.name + ' has expired!';
+            let chatData = {
+                user: game.user.id,
+                speaker: ChatMessage.getSpeaker(),
+                content: message
+            };
+            ChatMessage.create(chatData, {});
+            // Delete the combatant.
+            c.delete();
+        }
     }
 });
